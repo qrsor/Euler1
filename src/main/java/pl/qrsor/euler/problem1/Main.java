@@ -9,11 +9,11 @@ public class Main {
 	public static void main(String[] args) {
 
 		int limit = 1000;
-		NumberSequence sequence = new NaturalNumberSequence();
+		NumberSequence sequence = new NaturalNumberSequence(limit);
 		Condition dividableBy3 = new DividableCondition(3);
 		Condition dividableBy5 = new DividableCondition(5);
 
-		int sum = new ConditionalSum(limit, sequence, dividableBy3, dividableBy5).calculate();
+		int sum = new ConditionalSum(sequence, dividableBy3, dividableBy5).calculate();
 		System.out.println("Limit=" + limit + " ;Sum=" + sum);
 	}
 }

@@ -13,12 +13,12 @@ public class NaturalConditionalSumTest {
 	public void shouldReturn23ForLimit10() {
 		//given
 		int limit = 10;
-		NumberSequence sequence=new NaturalNumberSequence();
+		NumberSequence sequence=new NaturalNumberSequence(limit);
 		DividableCondition dividableBy3 = new DividableCondition(3);
 		DividableCondition dividableBy5 = new DividableCondition(5);
 
 		//when
-		int sum = new ConditionalSum(limit, sequence, dividableBy3, dividableBy5).calculate();
+		int sum = new ConditionalSum(sequence, dividableBy3, dividableBy5).calculate();
 
 		//then
 		assertThat(sum).isEqualTo(23);

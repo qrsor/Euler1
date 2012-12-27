@@ -5,20 +5,18 @@ import java.util.Set;
 import static com.google.common.collect.Sets.newHashSet;
 
 public class ConditionalSum {
-	protected final int limit;
 	protected final NumberSequence sequence;
 	protected final Set<Condition> conditions;
 	protected int sum;
 
-	public ConditionalSum(int limit, NumberSequence sequence, Condition... conditions) {
-		this.limit = limit;
+	public ConditionalSum(NumberSequence sequence, Condition... conditions) {
 		this.sequence = sequence;
 		this.conditions = newHashSet(conditions);
 	}
 
 	public int calculate() {
 		resetSum();
-		for (int number = sequence.next(); number < limit; number = sequence.next()) {
+		for (Integer number : sequence) {
 			if (numberMeetsConditions(number)) {
 				incrementSumBy(number);
 			}

@@ -9,10 +9,10 @@ public class NaturalNumberSequenceTest {
 	@Test
 	public void shouldReturn1AsFirstTerm() {
 		//given
-		NumberSequence sequence = new NaturalNumberSequence();
+		NumberSequence sequence = new NaturalNumberSequence(1);
 
 		//when
-		int term = sequence.next();
+		int term = sequence.iterator().next();
 
 		//then
 		assertThat(term).isEqualTo(1);
@@ -21,11 +21,11 @@ public class NaturalNumberSequenceTest {
 	@Test
 	public void shouldReturn2AsSecondTerm() {
 		//given
-		NumberSequence sequence = new NaturalNumberSequence();
+		NumberSequence sequence = new NaturalNumberSequence(2);
 
 		//when
-		sequence.next();
-		int term = sequence.next();
+		sequence.iterator().next();
+		int term = sequence.iterator().next();
 
 		//then
 		assertThat(term).isEqualTo(2);

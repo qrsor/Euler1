@@ -8,20 +8,20 @@ public class FibonacciSequenceTest {
 	@Test
 	public void shouldReturnFirstElevenTermsOfFibonacciSequence() {
 		//given
-		FibonacciSequence sequence = new FibonacciSequence();
+		FibonacciSequence sequence = new FibonacciSequence(100);
 
 		//when
 		int[] terms = {
-				sequence.next(),
-				sequence.next(),
-				sequence.next(),
-				sequence.next(),
-				sequence.next(),
-				sequence.next(),
-				sequence.next(),
-				sequence.next(),
-				sequence.next(),
-				sequence.next()
+				sequence.iterator().next(),
+				sequence.iterator().next(),
+				sequence.iterator().next(),
+				sequence.iterator().next(),
+				sequence.iterator().next(),
+				sequence.iterator().next(),
+				sequence.iterator().next(),
+				sequence.iterator().next(),
+				sequence.iterator().next(),
+				sequence.iterator().next()
 		};
 
 		//then

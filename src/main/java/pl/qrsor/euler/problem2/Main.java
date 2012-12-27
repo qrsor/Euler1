@@ -8,9 +8,9 @@ import pl.qrsor.euler.NumberSequence;
 public class Main {
 	public static void main(String[] args) {
 		int limit = 4000000;
-		NumberSequence sequence = new FibonacciSequence();
+		NumberSequence sequence = new FibonacciSequence(limit);
 		Condition condition = new DividableCondition(2);
-		int sum = new ConditionalSum(limit, sequence, condition).calculate();
+		int sum = new ConditionalSum(sequence, condition).calculate();
 		System.out.println("Limit=" + limit + " ;Sum=" + sum);
 	}
 }

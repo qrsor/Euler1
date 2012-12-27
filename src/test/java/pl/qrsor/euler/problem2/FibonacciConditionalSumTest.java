@@ -13,9 +13,9 @@ public class FibonacciConditionalSumTest {
 	public void shouldReturn2GivenLimit3() {
 		//given
 		int limit = 3;
-		NumberSequence sequence = new FibonacciSequence();
+		NumberSequence sequence = new FibonacciSequence(limit);
 		Condition condition = new DividableCondition(2);
-		ConditionalSum conditionalSum = new ConditionalSum(limit, sequence, condition);
+		ConditionalSum conditionalSum = new ConditionalSum(sequence, condition);
 
 		//when
 		int sum = conditionalSum.calculate();
