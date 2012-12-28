@@ -1,18 +1,21 @@
 package pl.qrsor.euler.problem6;
 
+import pl.qrsor.euler.NumberSequence;
+import pl.qrsor.euler.problem1.NaturalNumberSequence;
+
 public class SquareOfSumAndSumOfSquaresDiff {
-	private final int limit;
+	private NumberSequence sequence;
 
 	public SquareOfSumAndSumOfSquaresDiff(int limit) {
-		this.limit = limit;
+		sequence = new NaturalNumberSequence(limit);
 	}
 
 	public int calculate() {
 		int sum = 0;
 		int sumOfSquare = 0;
-		for (int i = 0; i < limit; i++) {
-			sum += i;
-			sumOfSquare += i * i;
+		for (Integer number : sequence) {
+			sum += number;
+			sumOfSquare += number * number;
 		}
 		return sum * sum - sumOfSquare;
 	}
