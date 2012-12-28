@@ -9,7 +9,7 @@ public class NaturalNumberSequenceTest {
 	@Test
 	public void shouldReturn1AsFirstTerm() {
 		//given
-		NumberSequence sequence = new NaturalNumberSequence(1);
+		NumberSequence sequence = NaturalNumberSequence.createLimitedByValue(1);
 
 		//when
 		int term = sequence.iterator().next();
@@ -21,7 +21,7 @@ public class NaturalNumberSequenceTest {
 	@Test
 	public void shouldReturn2AsSecondTerm() {
 		//given
-		NumberSequence sequence = new NaturalNumberSequence(2);
+		NumberSequence sequence = NaturalNumberSequence.createLimitedByValue(2);
 
 		//when
 		sequence.iterator().next();
@@ -29,5 +29,22 @@ public class NaturalNumberSequenceTest {
 
 		//then
 		assertThat(term).isEqualTo(2);
+	}
+
+	@Test
+	public void shouldReturnThreeItemsGivenLimitByIndex() {
+		//given
+		int index = 3;
+		NumberSequence sequence = NaturalNumberSequence.createLimitedByIndex(index);
+		int lastItem = 0;
+
+		//when
+		for (Integer number : sequence) {
+			lastItem = number;
+		}
+
+		//then
+		assertThat(lastItem).isEqualTo(3);
+
 	}
 }

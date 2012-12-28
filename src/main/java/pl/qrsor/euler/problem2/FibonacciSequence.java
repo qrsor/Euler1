@@ -1,5 +1,6 @@
 package pl.qrsor.euler.problem2;
 
+import pl.qrsor.euler.AbstractSequenceIterator;
 import pl.qrsor.euler.NumberSequence;
 
 import java.util.Iterator;
@@ -20,7 +21,7 @@ public class FibonacciSequence implements NumberSequence
 		return new FibonacciSequenceIterator();
 	}
 
-	private class FibonacciSequenceIterator implements Iterator<Integer> {
+	private class FibonacciSequenceIterator extends AbstractSequenceIterator {
 		@Override
 		public boolean hasNext() {
 			return current<limit;
@@ -32,11 +33,6 @@ public class FibonacciSequence implements NumberSequence
 			current = previous + current;
 			previous = tmp;
 			return tmp;
-		}
-
-		@Override
-		public void remove() {
-			throw new UnsupportedOperationException("Returning terms from a sequence is not supported");
 		}
 	}
 }

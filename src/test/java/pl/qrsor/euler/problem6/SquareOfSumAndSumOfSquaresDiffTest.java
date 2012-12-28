@@ -8,7 +8,7 @@ public class SquareOfSumAndSumOfSquaresDiffTest {
 	@Test
 	public void shouldReturn2640GivenLimitOf11() {
 		//given
-		int limit = 11;
+		int limit = 10;
 		SquareOfSumAndSumOfSquaresDiff diff = new SquareOfSumAndSumOfSquaresDiff(limit);
 
 		//when

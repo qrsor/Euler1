@@ -10,7 +10,7 @@ public class Main {
 		int limit = 4000000;
 		NumberSequence sequence = new FibonacciSequence(limit);
 		Condition condition = new DividableCondition(2);
-		int sum = new ConditionalSum(sequence, condition).calculate();
+		int sum = ConditionalSum.create(sequence, condition).calculate();
 		System.out.println("Limit=" + limit + " ;Sum=" + sum);
 	}
 }
